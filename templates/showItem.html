@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel=stylesheet type=text/css href="{{ url_for('static', filename='styles.css') }}">
+	<div class = "pane">
+
+</head>
+<body>
+
+
+Product Name: {{item.name}}
+
+<br>
+
+
+Added by: {{item.user}}
+<br>
+<br>
+
+{{item.description}}
+
+
+
+<br>
+<br>
+
+
+<a href = '/catalog'>Home</a>
+
+</div>
+
+</body>
+</html>

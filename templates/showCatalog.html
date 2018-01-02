@@ -1,0 +1,140 @@
+<html>
+
+<head>
+	<link rel=stylesheet type=text/css href="{{ url_for('static', filename='styles.css') }}">
+</head>
+
+<body>
+<div class = 'header'>
+
+
+	<div class = 'login'>
+
+	{% if session['logged_in'] %}
+	<p>{{session['user']}}</p>
+
+	<a href = '/dropsession'>Log Out</a>
+	{% else %}
+	<p> Please Sign In </p>
+	<a href = '/login'>Log In</a>
+	<br>
+	<a href = '/glogin'>Log In with Google</a>
+	<br>
+	<a href = '/register'>Sign Up</a>
+	{% endif %}
+	<br>
+	<br>
+	</div>
+
+
+<h1>Catalog Application</h1>
+
+
+</div>
+
+
+<div class = 'pane'>
+
+	<div class = 'search'>
+
+		<form action = "{{url_for('catalogList')}}"
+		method = 'post'>
+
+		<select name = "category">
+		  <option selected = "selected" value="All">All </option>
+		  <option value="Soccer">Soccer</option>
+		  <option value="Basketball">Basketball</option>
+		  <option value="Baseball">Baseball</option>
+		  <option value="Frisbee">Frisbee</option>
+		  <option value="Snowboarding">Snowboarding</option>
+		  <option value="Rock Climbing">Rock Climbing</option>
+		  <option value="Foosball">Foosball</option>
+		  <option value="Skating">Skating</option>
+		  <option value="Hockey">Hockey</option>
+		</select>
+
+
+		<input type='submit' value='Search'>
+
+		</form>
+
+	</div>
+
+
+
+<a href = '/create'>Create Item</a>
+<br>
+
+
+
+{% if category == "All" %}
+
+
+	<p>{% for i in items %}</p>
+	<hr>
+	<br>
+	{{i.name}}
+	<br>
+	Category: {{i.category}}
+	<br>
+	<a href = '{{url_for('showItem',id = i.id)}}'>Details</a>
+	
+	
+		{% if session['logged_in'] %}
+			{% if session['user'] == i.user %}
+			<a href = '{{url_for('editItem',id = i.id,userid = i.user_id)}}'>Edit</a>
+			<a href = '{{url_for('deleteItem',id = i.id,userid = i.user_id)}}'>Delete</a>
+			<br>
+			{% endif %}
+		{% endif %}
+	<br>
+	{% endfor %}
+	<br>
+
+{% elif category != "All"%}
+	
+	<h3>{{category}}</h3>
+	<hr>
+
+	{% for i in items %}
+	{{i.name}}
+	<br>
+	<a href = '{{url_for('showItem',id = i.id)}}'>Details</a>
+		{% if session['logged_in'] %}
+			{% if session['user'] == i.user %}
+			<a href = '{{url_for('editItem',id = i.id,userid = i.user_id)}}'>Edit</a>
+			<a href = '{{url_for('deleteItem',id = i.id,userid = i.user_id)}}'>Delete</a>
+			{% endif %}
+		{% endif %}
+		<br>
+		<br>
+	{% endfor %}
+
+
+{% endif %}
+{% if items|length < 1 %}
+<h3>No items found</h3>
+
+{% endif %}
+
+
+<!--MESSAGE FLASHING EXAMPLE -->
+{% with messages = get_flashed_messages() %}
+{% if messages %}
+
+<ul>
+{% for message in messages %}
+  <li><strong>{{message}}</strong></li>
+  {% endfor %}
+</ul>
+{% endif %}
+{% endwith %}
+
+<br>
+
+</div>
+
+
+</body>
+
+</html>

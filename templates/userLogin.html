@@ -1,0 +1,58 @@
+<html>
+
+<head>
+	<link rel=stylesheet type=text/css href="{{ url_for('static', filename='styles.css') }}">
+	<div class = "pane">
+	
+	
+</head>
+
+<body>
+
+<!--MESSAGE FLASHING EXAMPLE -->
+{% with messages = get_flashed_messages() %}
+{% if messages %}
+
+<ul>
+{% for message in messages %}
+  <li><strong>{{message}}</strong></li>
+  {% endfor %}
+</ul>
+{% endif %}
+{% endwith %}
+
+
+<form action = ""
+method = 'post'>
+
+
+	<p>Username:</p>
+		<input type='text' size='30' name="username" placeholder="">
+	<p>Password:</p>
+		<input type='text' size='30' name="password" placeholder="">
+
+<input type='submit' value='Login'>
+
+
+
+</form>
+
+<br>
+
+
+
+
+
+
+
+<a href = '/catalog'>Home</a>
+<br>
+<a href = '/register'>Sign Up</a>
+<br>
+<br>
+
+</div>
+	
+</body>
+
+</html>

@@ -1,0 +1,122 @@
+
+
+
+h1,
+h2,
+h3,
+h4 {
+    color: #e5541b;
+    text-decoration: none;
+}
+
+h1,
+h2 {
+    font-family: 'georgia', serif;
+    margin: 0;
+}
+
+h1 {
+ 
+}
+
+h2 {
+   
+}
+
+h3 {
+
+   
+}
+
+
+
+p,
+dd,
+dt {
+    color: white;
+}
+
+a {
+    text-decoration: none;
+
+    color: #ffffcc;
+   
+}
+
+p {
+	font-family: georgia;
+	color: #1bc3e5;
+	
+	
+
+}
+
+body {
+    font-family: sans-serif;
+    background-color: #f7d3c5
+}
+
+
+
+.pane {
+   
+    text-decoration-color: white;
+    margin: auto;
+    width: 70%;
+
+    color: #ffaa00;
+ 	
+    border: 2px solid;
+    border-radius: 10px;
+    padding: 10px;
+
+    border-color: #0c76af;
+    background-color: #06263d
+
+}
+
+
+
+.header {
+   
+    text-align: center;
+    margin: auto;
+    width: 70%;
+    border: 1px solid;
+    border-radius: 10px;
+    padding: 10px;
+   
+    border-color: #055b2a;
+    background-color: #05230d
+
+}
+
+.search {
+   
+    
+
+
+}
+
+.login {
+   
+   position: relative;
+     
+    float: right;
+    margin: auto;
+    width: 20%;
+    border: 2px solid;
+    border-radius: 10px;
+    padding: 2px;
+    font-size: 12px;
+
+
+    
+    border-color: #063d5b;
+    background-color: #010f16
+
+}
+
+
+
+

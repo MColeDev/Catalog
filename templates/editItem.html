@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel=stylesheet type=text/css href="{{ url_for('static', filename='styles.css') }}">
+	<div class = "pane">
+
+</head>
+<body>
+
+<!--MESSAGE FLASHING EXAMPLE -->
+{% with messages = get_flashed_messages() %}
+{% if messages %}
+
+<ul>
+{% for message in messages %}
+  <li><strong>{{message}}</strong></li>
+  {% endfor %}
+</ul>
+{% endif %}
+{% endwith %}
+
+
+
+<form action = "{{url_for('editItem',id = id)}}"
+method = 'post'>
+
+
+
+	<p>Name:</p>
+		<input type='text' size='60' name="name" value="{{name}}" placeholder="">
+	<p>Description:</p>
+<textarea rows="4" cols="50" name="description" value="{{description}}">
+{{description}}
+		</textarea>
+	<p>Category:</p>
+	<input type="radio" name="category" value="None" checked="checked" style="display:none"> <br>
+	<input type="radio" name="category" value="Soccer"> Soccer<br>
+  <input type="radio" name="category" value="Basketball"> Basketball<br>
+  <input type="radio" name="category" value="Baseball"> Baseball<br>
+  <input type="radio" name="category" value="Frisbee"> Frisbee<br>
+  <input type="radio" name="category" value="Snowboarding"> Snowboarding<br>
+  <input type="radio" name="category" value="Rock Climbing"> Rock Climbing<br>
+  <input type="radio" name="category" value="Foosball"> Foosball<br>
+  <input type="radio" name="category" value="Skating"> Skating<br>
+  <input type="radio" name="category" value="Hockey"> Hockey<br>
+<br>
+
+<input type='submit' value='Update'>
+
+
+</form>
+
+<br>
+<a href = '/catalog'>Home</a>
+<br>
+<br>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,59 @@
+<html>
+
+<head>
+	<link rel=stylesheet type=text/css href="{{ url_for('static', filename='styles.css') }}">
+	<div class = "pane">
+
+	<h1> Create New Product </h1>
+	
+</head>
+
+<body>
+
+
+<form action = ""
+method = 'post'>
+
+
+	<p>Name:</p>
+		<input type='text' size='60' name="name" placeholder="">
+	<p>Description:</p>
+<textarea rows="4" cols="50" name="description"></textarea>
+	<p>Category:</p>
+		  <input type="radio" name="category" value="Soccer" checked> Soccer<br>
+  <input type="radio" name="category" value="Basketball"> Basketball<br>
+  <input type="radio" name="category" value="Baseball"> Baseball<br>
+  <input type="radio" name="category" value="Frisbee"> Frisbee<br>
+  <input type="radio" name="category" value="Snowboarding"> Snowboarding<br>
+  <input type="radio" name="category" value="Rock Climbing"> Rock Climbing<br>
+  <input type="radio" name="category" value="Foosball"> Foosball<br>
+  <input type="radio" name="category" value="Skating"> Skating<br>
+  <input type="radio" name="category" value="Hockey"> Hockey<br>
+
+
+
+	
+
+<br>
+
+
+
+<input type='submit' value='Create'>
+
+
+
+</form>
+
+<br>
+
+
+
+<a href = '/catalog'>Home</a>
+<br>
+<br>
+</div>
+
+	
+</body>
+
+</html>
